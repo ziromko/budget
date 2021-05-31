@@ -1,12 +1,33 @@
 import React from 'react';
-import User from '../User';
+import Balance from '../Balance';
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      balance: 0
+    }
 
-    render() {
+    this.onIncrease = this.onIncrease.bind(this);
+    }
+
+  onIncrease() {
+    this.setState({
+      balance: this.state.balance + 1
+    })
+  }
+
+  onDecrease = () => {
+    this.setState({
+      balance: this.state.balance - 1
+    })
+  }
+
+  render() {
    return (
     <div>
-      <User name="Zirom" age="35"/>
-      <User name="Lena" age="33"/>
+       <Balance balance={this.state.balance} />
+       <button onClick={this.onIncrease}>Додати 1</button>
+       <button onClick={this.onDecrease}>Відняти 1</button>
     </div>
   ) 
 }  
