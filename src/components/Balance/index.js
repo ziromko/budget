@@ -1,7 +1,8 @@
 const Balance = ({ balance}) => {
     return (
         <div>
-            {balance}            
+            
+            {balance}
         </div>
     )
 }
